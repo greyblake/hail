@@ -1,0 +1,9 @@
+[package]
+name = "hail"
+version = "0.1.0"
+authors = ["Sergey Potapov <blake131313@gmail.com>"]
+
+[dependencies]
+futures = "0.1"
+hyper = "0.11"
+tokio-core = "0.1"
