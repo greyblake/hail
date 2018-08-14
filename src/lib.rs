@@ -25,6 +25,7 @@ fn print_report(report: &Report) {
     println!("Requests sent: {}", report.total_count());
     println!("Total time: {}", humanize_duration(report.total_time));
     println!("Avg response time: {}", humanize_duration(report.avg_time()));
+    println!("Requests per second: {:.1}", report.req_per_sec());
     println!("OK rate: {:.2}%", report.ok_rate() * 100.0);
     println!("Error rate: {:.2}%", report.error_rate() * 100.0);
 }
