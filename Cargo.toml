@@ -2,6 +2,8 @@
 name = "hail"
 version = "0.1.0"
 authors = ["Sergey Potapov <blake131313@gmail.com>"]
+description = "HTTP load testing tool powered by Rust and Tokio"
+license = "MIT"
 
 [dependencies]
 clap = "2.29"
