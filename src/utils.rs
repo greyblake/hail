@@ -1,8 +1,5 @@
-use clap::ArgMatches;
-
 use std::fmt::Display;
 use std::process::exit;
-use std::str::FromStr;
 use std::time::Duration;
 
 // This function has generic type T to bypass compiler's "type does not match" errors.
@@ -10,17 +7,6 @@ use std::time::Duration;
 pub fn abort<T, M: Display>(msg: M) -> T {
     eprintln!("{}", msg);
     exit(1);
-}
-
-pub fn fetch_opt<T: FromStr>(matches: &ArgMatches, name: &str) -> Result<T, String> {
-    matches.value_of(name).map_or(
-        Err(format!("Option {} must be specified", name)),
-        |given_value| {
-            given_value.parse::<T>().or_else(|_| {
-                Err(format!("Invalid value of {}: {}", name, given_value))
-            })
-        },
-    )
 }
 
 pub fn humanize_duration(duration: Duration) -> String {

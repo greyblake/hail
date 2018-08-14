@@ -4,7 +4,8 @@ version = "0.1.0"
 authors = ["Sergey Potapov <blake131313@gmail.com>"]
 
 [dependencies]
+clap = "2.29"
 futures = "0.1"
 hyper = "0.11"
+hyper-tls = "*"
 tokio-core = "0.1"
-clap = "2.29"
